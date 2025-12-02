@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-emplist',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './emplist.html',
   styleUrl: './emplist.css',
 })
@@ -14,3 +15,4 @@ export class Emplist {
     { employeeNumber: 'EMP-3', fullName: 'Nefer', gender: 'Female', role: 'Product Manager', email: 'neferistoosmart@email.com', status: 'Inactive', salary: 77777, avatar: 'Nefer_Icon.webp' }
   ];
 }
+
