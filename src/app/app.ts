@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('prelim-project-team_name');
+
+  constructor(router: Router) {
+    router.events
+      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+      .subscribe(() => window.scrollTo(0, 0));
+  }
 }
