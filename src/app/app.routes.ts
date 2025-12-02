@@ -11,4 +11,4 @@ export const routes: Routes = [
   { path: 'emplist', component: Emplist},
   { path: 'product', component:  Product},
   { path: 'pagenotfound', component: Pagenotfound},
-];
+  { path: '**', redirectTo: 'pagenotfound' }];
