@@ -10,10 +10,15 @@ import { filter } from 'rxjs';
 })
 export class App {
   protected readonly title = signal('prelim-project-team_name');
+  isMobileMenuOpen = false;
 
   constructor(router: Router) {
     router.events
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
       .subscribe(() => window.scrollTo(0, 0));
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 }
