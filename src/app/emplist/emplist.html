@@ -22,23 +22,19 @@
 			</div>
 
 			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-				<div class="bg-gray-800 rounded-2xl shadow-sm border border-gray-700 p-6 text-center" data-aos="fade-up" data-aos-delay="150">
-					<img src="https://i.pravatar.cc/150?img=12" alt="" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-					<h3 class="text-lg font-bold text-gray-100">Aiko Tanaka</h3>
-					<p class="text-gray-400 text-sm">Lead Engineer</p>
-				</div>
-
-				<div class="bg-gray-800 rounded-2xl shadow-sm border border-gray-700 p-6 text-center" data-aos="fade-up" data-aos-delay="250">
-					<img src="https://i.pravatar.cc/150?img=5" alt="" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-					<h3 class="text-lg font-bold text-gray-100">Marcus Lee</h3>
-					<p class="text-gray-400 text-sm">Art Director</p>
-				</div>
-
-				<div class="bg-gray-800 rounded-2xl shadow-sm border border-gray-700 p-6 text-center" data-aos="fade-up" data-aos-delay="350">
-					<img src="https://i.pravatar.cc/150?img=32" alt="" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-					<h3 class="text-lg font-bold text-gray-100">Sara Gomez</h3>
-					<p class="text-gray-400 text-sm">Product Manager</p>
-				</div>
+				@for (emp of employees; track $index) {
+					<div class="bg-gray-800 rounded-2xl shadow-sm border border-gray-700 p-6 text-center" data-aos="fade-up" [attr.data-aos-delay]="150 + $index * 100">
+						<img src="{{ emp.avatar }}" alt="{{ emp.fullName }}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+						<h3 class="text-lg font-bold text-gray-100">{{ emp.fullName }}</h3>
+						<p class="text-gray-400 text-sm">{{ emp.role }}</p>
+						<p class="text-gray-400 text-sm mt-2"><a class="hover:text-white" href="mailto:{{ emp.email }}">{{ emp.email }}</a></p>
+						@if (emp.status === 'Active') {
+							<p class="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white mt-3" style="background-color:#16a34a">Active</p>
+						} @else {
+							<p class="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white mt-3" style="background-color:#dc2626">Inactive</p>
+						}
+					</div>
+				}
 			</div>
 		</section>
 
