@@ -9,8 +9,8 @@ import { CommonModule } from '@angular/common';
 })
 export class Emplist {
   employees: any[] = [
-    { fullName: 'Aiko Tanaka', role: 'Lead Engineer', email: 'sample1@email.com', status: 'Active', avatar: 'https://i.pravatar.cc/150?img=12' },
-    { fullName: 'Marcus Lee', role: 'Art Director', email: 'sample2@email.com', status: 'Active', avatar: 'https://i.pravatar.cc/150?img=5' },
-    { fullName: 'Sara Gomez', role: 'Product Manager', email: 'sample3@email.com', status: 'Inactive', avatar: 'https://i.pravatar.cc/150?img=32' }
+    { employeeNumber: 'EMP-1', fullName: 'Aiko Tanaka', gender: 'Male', role: 'Lead Engineer', email: 'sample1@email.com', status: 'Active', salary: 99999, avatar: 'https://i.pravatar.cc/150?img=12' },
+    { employeeNumber: 'EMP-2', fullName: 'Marcus Lee', gender: 'Female', role: 'Art Director', email: 'sample2@email.com', status: 'Active', salary: 88888, avatar: 'https://i.pravatar.cc/150?img=5' },
+    { employeeNumber: 'EMP-3', fullName: 'Sara Gomez', gender: 'Female', role: 'Product Manager', email: 'sample3@email.com', status: 'Inactive', salary: 77777, avatar: 'https://i.pravatar.cc/150?img=32' }
   ];
 }
