@@ -9,10 +9,10 @@
             <div class="absolute inset-0 bg-black opacity-60"></div> <!-- Dark overlay -->
             <div class="relative z-10 max-w-6xl mx-auto text-center text-white px-4">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight" data-aos="fade-right" data-aos-delay="100">
-                    Tech <span class="text-cyan-300">Otakus </span> <span class="text-white">Save the World</span>
+                    {{ title }}
                 </h1>
                 <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10" data-aos="fade-left" data-aos-delay="200">
-                    We create immersive virtual world experiences for players around the globe. Explore vast universes, compelling stories, and cutting-edge technology.
+                    {{ description }}
                 </p>
             </div>
         </section>
@@ -21,16 +21,16 @@
         <section class="bg-gray-900 py-10 border-b border-gray-700" data-aos="fade-up">
             <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div data-aos="zoom-in" data-aos-delay="100">
-                    <h3 class="text-3xl font-bold text-gray-100">500M+</h3>
-                    <p class="text-gray-600">Global Downloads</p>
+                    <h3 class="text-3xl font-bold text-gray-100">{{ stats[0].value }}</h3>
+                    <p class="text-gray-600">{{ stats[0].label }}</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="200">
-                    <h3 class="text-3xl font-bold text-gray-100">Global</h3>
-                    <p class="text-gray-600">Offices & Operations</p>
+                    <h3 class="text-3xl font-bold text-gray-100">{{ stats[1].value }}</h3>
+                    <p class="text-gray-600">{{ stats[1].label }}</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="300">
-                    <h3 class="text-3xl font-bold text-gray-100">Multi-Platform</h3>
-                    <p class="text-gray-600">PC, Console, Mobile, Cloud</p>
+                    <h3 class="text-3xl font-bold text-gray-100">{{ stats[2].value }}</h3>
+                    <p class="text-gray-600">{{ stats[2].label }}</p>
                 </div>
             </div>
         </section>
@@ -46,44 +46,44 @@
                 <!-- Genshin Impact -->
                 <div class="bg-gray-800 rounded-2xl shadow-sm border border-gray-700 overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="100">
                     <div class="h-48 bg-sky-200 flex items-center justify-center relative">
-                        <img src="https://i.ytimg.com/vi/fU6nElrxNRs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCMveCCW1u6sbt06xqjOfa-7UA15Q" alt="" class="w-full h-full object-cover" loading="lazy">
+                        <img src="{{ products[0].img }}" alt="{{ products[0].title }}" class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold mb-2 text-gray-100">Genshin Impact</h3>
-                        <p class="text-gray-500 text-sm mb-4 flex-1">Step into Teyvat, a vast world teeming with life and flowing with elemental energy.</p>
+                        <h3 class="text-xl font-bold mb-2 text-gray-100">{{ products[0].title }}</h3>
+                        <p class="text-gray-500 text-sm mb-4 flex-1">{{ products[0].description }}</p>
                         <a href="https://genshin.hoyoverse.com/en/" class="w-full py-2 border border-gray-300 rounded-full font-semibold text-gray-100 hover:bg-gray-900 inline-flex items-center justify-center">View Details</a>
                     </div>
                 </div>
                 <!-- Honkai: Star Rail -->
                 <div class="bg-gray-800 rounded-2xl shadow-sm border border-gray-700 overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="200">
                     <div class="h-48 bg-indigo-200 flex items-center justify-center relative">
-                        <img src="https://i.ytimg.com/vi/qO09wOQ8xJs/maxresdefault.jpg" alt="" class="w-full h-full object-cover" loading="lazy">
+                        <img src="{{ products[1].img }}" alt="{{ products[1].title }}" class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold mb-2 text-gray-100">Honkai: Star Rail</h3>
-                        <p class="text-gray-500 text-sm mb-4 flex-1">Hop aboard the Astral Express and explore the infinite wonders of the galaxy.</p>
+                        <h3 class="text-xl font-bold mb-2 text-gray-100">{{ products[1].title }}</h3>
+                        <p class="text-gray-500 text-sm mb-4 flex-1">{{ products[1].description }}</p>
                         <a href="https://hsr.hoyoverse.com/en-us/" class="w-full py-2 border border-gray-300 rounded-full font-semibold text-gray-100 hover:bg-gray-900 inline-flex items-center justify-center">View Details</a>
                     </div>
                 </div>
                 <!-- Zenless Zone Zero -->
                 <div class="bg-gray-800 rounded-2xl shadow-sm border border-gray-700 overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="300">
                     <div class="h-48 bg-neutral-800 flex items-center justify-center relative">
-                        <img src="https://fastcdn.hoyoverse.com/content-v2/plat/160935/284f339052a8e2546e4b33be6da0ea47_747937525091658465.jpeg" alt="" class="w-full h-full object-cover" loading="lazy">
+                        <img src="{{ products[2].img }}" alt="{{ products[2].title }}" class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold mb-2 text-gray-100">Zenless Zone Zero</h3>
-                        <p class="text-gray-500 text-sm mb-4 flex-1">Live dual identities in New Eridu. Take on commissions and explore the Hollows.</p>
+                        <h3 class="text-xl font-bold mb-2 text-gray-100">{{ products[2].title }}</h3>
+                        <p class="text-gray-500 text-sm mb-4 flex-1">{{ products[2].description }}</p>
                         <a href="https://zenless.hoyoverse.com/en-us/" class="w-full py-2 border border-gray-300 rounded-full font-semibold text-gray-100 hover:bg-gray-900 inline-flex items-center justify-center">View Details</a>
                     </div>
                 </div>
                 <!-- Honkai Impact 3rd -->
                 <div class="bg-gray-800 rounded-2xl shadow-sm border border-gray-700 overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="400">
                     <div class="h-48 bg-purple-200 flex items-center justify-center relative">
-                        <img src="https://fastcdn.hoyoverse.com/content-v2/bh3/160546/89bbb7479502597b0a25d9d39a3a3109_4351332358891707014.jpg" alt="" class="w-full h-full object-cover" loading="lazy">
+                        <img src="{{ products[3].img }}" alt="{{ products[3].title }}" class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold mb-2 text-gray-100">Honkai Impact 3rd</h3>
-                        <p class="text-gray-500 text-sm mb-4 flex-1">Ignite the spark to save the world. A classic action title with a deep narrative.</p>
+                        <h3 class="text-xl font-bold mb-2 text-gray-100">{{ products[3].title }}</h3>
+                        <p class="text-gray-500 text-sm mb-4 flex-1">{{ products[3].description }}</p>
                         <a href="https://honkaiimpact3.hoyoverse.com/global/en-us/fab" class="w-full py-2 border border-gray-300 rounded-full font-semibold text-gray-100 hover:bg-gray-900 inline-flex items-center justify-center">View Details</a>
                     </div>
                 </div>
