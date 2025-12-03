@@ -27,15 +27,8 @@ export class Product {
     { title: 'N0va Desktop', img: 'https://pbs.twimg.com/profile_images/1504663440530440192/U8mfsBHr_400x400.jpg', description: 'Immersive live wallpapers featuring Lumi.', url: '#' }
   ];
 
-  // sample generic fields
   imageUrl = 'product.webp';
-  w = 50;
-  h = 50;
-  altText = 'Product image';
-  textColor = 'blue';
-  isHighlighted = true;
-  yourName = '';
-
   trackById(index: number, item: any) { return item.id; }
 
 }
+
