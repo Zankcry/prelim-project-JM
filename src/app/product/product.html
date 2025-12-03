@@ -2,17 +2,17 @@
     <main class="w-full bg-gray-900">
         
         <!-- Product Hero Section -->
-        <section class="relative text-white min-h-[80vh] flex items-center px-4 border-t border-gray-800 bg-cover bg-center" style="background-image: url('product.webp');" data-aos="fade-up">
+        <section class="relative text-white min-h-[80vh] flex items-center px-4 border-t border-gray-800 bg-cover bg-center" [style.background-image]="'url(' + imageUrl + ')'" data-aos="fade-up">
             <div class="absolute inset-0 bg-black opacity-50 pointer-events-none"></div>
             <div class="max-w-6xl mx-auto text-center relative z-10">
                 <div class="mb-4 text-purple-400 font-semibold tracking-wider uppercase text-sm">
                     Our Games & Services
                 </div>
                 <h1 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-right" data-aos-delay="100">
-                    Explore Our Universes
+                    {{ title }}
                 </h1>
                 <p class="text-gray-200 text-lg leading-relaxed max-w-2xl mx-auto" data-aos="fade-left" data-aos-delay="200">
-                    From vast open worlds to interstellar journeys and urban fantasies. Discover the game that speaks to your adventure spirit.
+                    {{ description }}
                 </p>
             </div>
         </section>
@@ -21,7 +21,7 @@
         <section class="bg-gray-900 border-b border-gray-700 sticky top-0 z-10 shadow-sm">
             <div class="max-w-6xl mx-auto px-4 py-4 overflow-x-auto">
                 <div class="flex space-x-2 md:justify-center min-w-max">
-                    <button class="px-6 py-2 bg-gray-900 text-white rounded-full text-4xl font-bold">Featured Products</button>
+                    <button class="px-6 py-2 bg-gray-900 text-white rounded-full text-4xl font-bold">{{ featuredLabel }}</button>
                 </div>
             </div>
         </section>
@@ -33,19 +33,17 @@
             <!-- Product 1: Genshin Impact -->
             <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-sm border border-gray-700 flex flex-col md:flex-row h-auto md:h-80" data-aos="fade-up" data-aos-delay="100">
                 <!-- Visual Side -->
-                <div class="md:w-5/12 bg-sky-100 relative flex items-center justify-center">
+                    <div class="md:w-5/12 bg-sky-100 relative flex items-center justify-center">
                     <div class="absolute inset-0 bg-gradient-to-br from-sky-500 to-blue-600 opacity-20"></div>
-                    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWQwY2VqaGRrNHN1b240eGZtenUyM3dsYWJzNGNmaGdwYjE5YzVmaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PmwSU5R6R3cSsbQDjT/giphy.gif" alt="" class="w-full h-full object-cover" loading="lazy">
+                    <img src="{{ products[0].img }}" alt="{{ products[0].title }}" class="w-full h-full object-cover" loading="lazy">
                     <div class="absolute bottom-6 left-6 text-white font-bold text-xl z-10 flex items-center gap-2">
                         <i class="ri-global-line"></i> Global Hit
                     </div>
                 </div>
                 <!-- Content Side -->
                 <div class="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
-                    <h2 class="text-3xl font-bold text-gray-100 mb-3">Genshin Impact</h2>
-                    <p class="text-gray-400 mb-6">
-                        Step into Teyvat, a vast world teeming with life and flowing with elemental energy. You and your sibling arrived here from another world. Separated by an unknown god, stripped of your powers, and cast into a deep slumber, you now awake to a world very different from when you first arrived.
-                    </p>
+                    <h2 class="text-3xl font-bold text-gray-100 mb-3">{{ products[0].title }}</h2>
+                    <p class="text-gray-400 mb-6">{{ products[0].description }}</p>
                     
                     <!-- Platforms -->
                     <div class="flex items-center gap-4 text-gray-400 mb-8">
@@ -71,14 +69,12 @@
                 <!-- Visual Side -->
                 <div class="md:w-5/12 bg-indigo-100 relative flex items-center justify-center">
                     <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-800 opacity-20"></div>
-                    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnFtbHdyNnhpYTVuN3phemNvODl6OHV5NmJvM3F4d2FtcTZjYjR5NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5XsVTCUTr2ulcEdcAg/giphy.gif" alt="" class="w-full h-full object-cover" loading="lazy">
+                    <img src="{{ products[1].img }}" alt="{{ products[1].title }}" class="w-full h-full object-cover" loading="lazy">
                 </div>
                 <!-- Content Side -->
                 <div class="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
-                    <h2 class="text-3xl font-bold text-gray-100 mb-3">Honkai: Star Rail</h2>
-                    <p class="text-gray-400 mb-6">
-                        Hop aboard the Astral Express and explore the infinite wonders of the galaxy. In this HoYoverse space fantasy RPG, you will embark on a journey across the stars, meeting new companions and resolving Stellaron crises.
-                    </p>
+                    <h2 class="text-3xl font-bold text-gray-100 mb-3">{{ products[1].title }}</h2>
+                    <p class="text-gray-400 mb-6">{{ products[1].description }}</p>
                     
                     <div class="flex items-center gap-4 text-gray-400 mb-8">
                         <i class="ri-playstation-fill text-xl hover:text-gray-600"></i>
@@ -103,14 +99,12 @@
                 <!-- Visual Side -->
                 <div class="md:w-5/12 bg-neutral-900 relative flex items-center justify-center">
                     <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-black opacity-20"></div>
-                    <img src="https://media1.tenor.com/m/wnSuRf4NVkMAAAAC/burnice-other-quiality.gif" alt="" class="w-full h-full object-cover" loading="lazy">
+                    <img src="{{ products[2].img }}" alt="{{ products[2].title }}" class="w-full h-full object-cover" loading="lazy">
                 </div>
                 <!-- Content Side -->
                 <div class="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
-                    <h2 class="text-3xl font-bold text-gray-100 mb-3">Zenless Zone Zero</h2>
-                    <p class="text-gray-400 mb-6">
-                        Don't go into the Hollows. I know, inside the Hollows are ether resources, grotesque mutants, and perhaps even the ruins of the old civilization... But don't forget, there is disorder there. Welcome to New Eridu.
-                    </p>
+                    <h2 class="text-3xl font-bold text-gray-100 mb-3">{{ products[2].title }}</h2>
+                    <p class="text-gray-400 mb-6">{{ products[2].description }}</p>
                     
                     <div class="flex items-center gap-4 text-gray-400 mb-8">
                         <i class="ri-playstation-fill text-xl hover:text-gray-600"></i>
@@ -135,14 +129,12 @@
                 <!-- Visual Side -->
                 <div class="md:w-5/12 bg-purple-100 relative flex items-center justify-center">
                     <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-700 opacity-20"></div>
-                    <img src="https://media1.tenor.com/m/_KUGJd8iTP8AAAAC/elysia-chibi.gif" alt="Honkai Impact 3rd artwork" class="w-full h-full object-cover" loading="lazy">
+                    <img src="{{ products[3].img }}" alt="{{ products[3].title }}" class="w-full h-full object-cover" loading="lazy">
                 </div>
                 <!-- Content Side -->
                 <div class="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
-                    <h2 class="text-3xl font-bold text-gray-100 mb-3">Honkai Impact 3rd</h2>
-                    <p class="text-gray-400 mb-6">
-                        A fast-paced action RPG where players command Valkyries to battle the mysterious Honkai and uncover the truth behind catastrophic events. Dive into high-octane combat, stunning visuals, and a deep story-driven experience.
-                    </p>
+                    <h2 class="text-3xl font-bold text-gray-100 mb-3">{{ products[3].title }}</h2>
+                    <p class="text-gray-400 mb-6">{{ products[3].description }}</p>
                     
                     <div class="flex items-center gap-4 text-gray-400 mb-8">
                         <i class="ri-windows-fill text-xl hover:text-gray-600"></i>
