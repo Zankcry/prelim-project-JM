@@ -5,8 +5,15 @@ import { RouterLink } from '@angular/router';
   selector: 'app-pagenotfound',
   imports: [RouterLink],
   templateUrl: './pagenotfound.html',
-  styleUrl: './pagenotfound.css',
+  styleUrls: ['./pagenotfound.css'],
 })
 export class Pagenotfound {
+  code = '404';
+  title = 'System Error: Area Not Unlocked';
+  description = "The coordinates you are trying to reach do not exist in this timeline. It seems you've wandered into the Sea of Quanta.";
+
+  // CTA labels
+  returnHomeText = 'Return to Home';
+  viewProductsText = 'View Products';
 
 }
