@@ -1,5 +1,7 @@
 # Cognosphere/Hoyoverse Fan Website
 
+<img width="1906" height="907" alt="image" src="https://github.com/user-attachments/assets/ed320246-6d1b-417c-879f-571f12a03133" />
+
 This project is a web application built with Angular, showcasing the games and services of the company Cognosphere, also known as Hoyoverse. It is intended as a fan-made portfolio or a template for a company website.
 
 The website features a modern, responsive design and includes sections for:
